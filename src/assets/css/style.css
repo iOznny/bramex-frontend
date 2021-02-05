@@ -1,0 +1,12 @@
+:root {
+    --colorprincipal: #FFF;
+    --colorsecundario: #FFF;
+}
+
+.uk-offcanvas {
+    z-index: 10000 !important;
+}
+
+.uk-min-height-100 {
+    min-height: 100vh !important;
+}
