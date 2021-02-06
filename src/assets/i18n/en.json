@@ -1,0 +1,111 @@
+{
+    "HEADER": {
+        "title": "BRAMEX FOODS INTERNATIONAL",
+        "buttons": {
+            "btn1": "ABOUT US",
+            "btn2": "PRODUCTS"
+        }
+    },
+    "NAVBAR": {
+        "buttons": {
+            "btn1": "OUR COMPANY",
+            "btn2": "PRODUCTS",
+            "btn3": "QUALITY",
+            "btn4": "CATERING",
+            "btn5": "CONTACT"
+        }
+    },
+    "COMPANY": {
+        "title": "OUR COMPANY",
+        "sections": {
+            "about": {
+                "title": "ABOUT US",
+                "subtitle": "About us",
+                "contents": {
+                    "c1": "Bramex Foods International is more than a commercial agency. We are your international partner when it comes to needing a reliable supply source that provides you with a wide variety of raw materials. We always work closely and cordially with our clients, ensuring a common interest through a unified network.",
+                    "c2": "Through responsible supply sources, we supply food ingredients such as concentrated and non-concentrated juices, purees, essential oils and other derivatives of citrus and tropical fruits, among other products, according to your demand.  For more information about our offer we suggest reviewing our commercial catalog.",
+                    "c3": "Our activity is derived from years of working together with our collaborators. Relations forged based on commitment, work and responsibility.",                     
+                    "c4": "Throughout the entire supply chain we have production sources, processors and alternative services (logistics) available to our customers / distributors."
+                } 
+            },
+            "mission": {
+                "title": "MISSION AND VISION",
+                "subtitles": {
+                    "mission": "Mission",
+                    "vision": "Vision",
+                    "values": "Values"
+                },
+                "contents": {
+                    "mission": "To be the right arm of our clients, becoming an extension of them that allows them to develop through us an endless number of successful, truthful and safe negotiations, always seeking their complete satisfaction.",
+                    "vision": "To become an inexhaustible and efficient source in the creation and development of businesses for all our international business partners.",
+                    "values": {
+                        "titles": {
+                            "t1": "Responsibility.",
+                            "t2": "Empathy and work ethics.",
+                            "t3": "Dedication.",
+                            "t4": "Collaboration and Fellowship."
+                        },
+                        "contents": {
+                            "c1": " We comply with actions and results. Not with words and intentions.",
+                            "c2": " It helps us to put ourselves in the situation of our fellow human beings.",
+                            "c3": " Passion for our work, pride for what we do and undertake.",
+                            "c4": " We believe in long-term relationships and mutual success as fundamental pillars of our reason for being."
+                        }
+                    }
+                }
+            },
+            "history": {
+                "title": "HISTORY",
+                "subtitle": "COMPANY"
+            },
+            "services": {
+                "title": "SERVICES",
+                "subtitle": "Services",
+                "contents": {
+                    "c1": "We will take care to significantly reduce the effort and time of searching for a reliable source for our clients. Let our experience in the market give you the peace of mind you need knowing you have the supplier you need.",
+                    "c2": "We have an extensive network of partners located throughout different regions of the world, providing our clients with the specialized care that is needed to generate fruitful and safe business.",
+                    "c3": "Our services:",
+                    "c4": "We coordinate the obtaining, monitoring and acquisition of the ingredients required by our clients.",
+                    "c5": "We know the market conditions and valuations. We have the latest industry reports and harvest reports.",
+                    "c6": "We organize and provide follow-up to your order from start to finish and if necessary we can coordinate the necessary logistics programming.",
+                    "c7": "Long-term contracts as well as spot-sales.",
+                    "c8": "Although citrus and tropical fruits are our specialty, we offer a wide variety of fruit-based ingredients, both conventional and organic. And if you do not find a product you are looking for in our offer, do not worry, we also help you find it."
+                }
+            }
+        }
+    },
+    "PRODUCTS": {
+        "title": "PRODUCTS",
+        "categories": {
+            "all": "SHOW EVERYTHING",
+            "spring": "SPRING",
+            "summer": "SUMMER",
+            "autumn": "AUTUMN",
+            "winter": "WINTER"
+        },
+        "catalogue": "DOWNLOAD OUR PRODUCT CATALOG"
+    },
+    "QUALITY": {
+        "title": "QUALITY"
+    },
+    "CATERING": {
+        "title": "CATERING"
+    },
+    "FOOTER": {
+        "contact": {
+            "title": "Contact",
+            "location": "Location"
+        },
+        "social": {
+            "title": "Social Networks"
+        },
+        "copy": {
+            "title": "All rights reserved."
+        },
+        "information": {
+            "title": "My location",
+            "subtitle": "Request more information."
+        }
+    }
+    
+}
