@@ -1,0 +1,110 @@
+{
+    "HEADER": {
+        "title": "BRAMEX FOODS INTERNACIONAL",
+        "buttons": {
+            "btn1": "¿QUIENES SOMOS?",
+            "btn2": "PRODUCTOS"
+        }
+    },
+    "NAVBAR": {
+        "buttons": {
+            "btn1": "NUESTRA EMPRESA",
+            "btn2": "PRODUCTOS",
+            "btn3": "CALIDAD",
+            "btn4": "ABASTECIMIENTO",
+            "btn5": "CONTACTO"
+        }
+    },
+    "COMPANY": {
+        "title": "NUESTRA EMPRESA",
+        "sections": {
+            "about": {
+                "title": "¿QUIENES SOMOS?",
+                "subtitle": "¿Quienes somos?",
+                "contents": {
+                    "c1": "Bramex Foods International es más que una agencia comercial. Somos su socio internacional a la hora de necesitar una fuente de suministro confiable que le brinde una amplia variedad de materias primas. Trabajamos siempre con un trato cercano y cordial con nuestros clientes, velando por un interés común a través de una red unificada.",
+                    "c2": "Por medio de responsables fuentes de suministro abastecemos a la orden de su demanda por ingredientes alimenticios como jugos concentrados, no concentrados, purés, aceites esenciales y demás derivados de frutas cítricas y tropicales, entre otros productos. Para más información sobre nuestra oferta sugerimos revisar nuestro catálogo comercial.",
+                    "c3": "Nuestra actividad se deriva de años de trabajo en conjunto con nuestros colaboradores. Relaciones labradas a base de compromiso, trabajo y responsabilidad.",                     
+                    "c4": "A lo largo de toda la cadena suministro contamos con fuentes de producción, procesadores y servicios alternos (logísticos) al alcance de nuestros clientes/distribuidores."
+                } 
+            },
+            "mission": {
+                "title": "MISIÓN Y VISIÓN",
+                "subtitles": {
+                    "mission": "Misión",
+                    "vision": "Visión",
+                    "values": "Valores"
+                },
+                "contents": {
+                    "mission": "Ser el brazo derecho de nuestros clientes convirtiéndonos en una extensión de ellos que les permita poder desarrollar a través de nosotros un sin fin de negociaciones exitosas veraces y seguras, buscando siempre su completa satisfacción.",
+                    "vision": "Convertirnos en una fuente inagotable y eficiente en la creación y desarrollo de negocios para todos nuestros aliados comerciales a nivel internacional.",
+                    "values": {
+                        "titles": {
+                            "t1": "Responsabilidad.",
+                            "t2": "Empatía y Ética de trabajo.",
+                            "t3": "Dedicación.",
+                            "t4": "Colaboración y Compañerismo."
+                        },
+                        "contents": {
+                            "c1": " Cumplimos con acciones y resultados. No con palabras e intenciones.",
+                            "c2": " Nos ayuda a ponernos en la situación de nuestros semejante.",
+                            "c3": " Pasión por nuestro trabajo, orgullo por lo que hacemos y emprendemos.",
+                            "c4": " Creemos en relaciones de largo plazo y éxito mutuo como pilares fundamentales de nuestra razón de ser."
+                        }
+                    }
+                }
+            },
+            "history": {
+                "title": "HISTORIA",
+                "subtitle": "EMPRESA"
+            },
+            "services": {
+                "title": "SERVICIOS",
+                "subtitle": "Servicios",
+                "contents": {
+                    "c1": "Nos encargaremos de reducir significativamente el esfuerzo y el tiempo de búsqueda de una fuente confiable para nuestros clientes. Permita que nuestra experiencia en el mercado le brinde la tranquilidad que necesita al saber que cuenta con el proveedor que tanto necesitaba.",
+                    "c2": "Contamos con una extensa red de socios localizados a lo largo de distintas regiones del mundo, brindando a nuestros clientes una atención especializada que se necesita para generar fructíferos y seguros negocios.",
+                    "c3": "Nuestros servicios:",
+                    "c4": "Coordinamos la obtención, seguimiento y adquisición de los ingredientes requeridos por nuestros clientes.",
+                    "c5": "Conocemos las condiciones y valoraciones del mercado. Contamos con los últimos reportes de la industria e informes de cosecha.",
+                    "c6": "Organizamos y brindamos seguimiento a tu pedido de principio a fin y de ser necesario podemos coordinar la programación logística necesaria.",
+                    "c7": "Contratos a largo plazo y ventas al contado.",
+                    "c8": "A pesar que los cítricos y las frutas tropicales son nuestra especialidad , ofrecemos una amplia variedad de ingredientes a base de frutas, tanto convencionales como orgánicos. Y si usted no encuentra algún producto que esté buscando dentro de nuestra oferta, no se preocupe, también le ayudamos a dar con ello."
+                }
+            }
+        }
+    },
+    "PRODUCTS": {
+        "title": "PRODUCTOS",
+        "categories": {
+            "all": "MOSTRAR TODO",
+            "spring": "PRIMAVERA",
+            "summer": "VERANO",
+            "autumn": "OTOÑO",
+            "winter": "INVIERNO"
+        },
+        "catalogue": "DESCARGAR NUESTRO CATALOGO DE PRODUCTOS"
+    },
+    "QUALITY": {
+        "title": "CALIDAD"
+    },
+    "CATERING": {
+        "title": "ABASTECIMIENTO"
+    },
+    "FOOTER": {
+        "contact": {
+            "title": "Contacto",
+            "location": "Ubicación"
+        },
+        "social": {
+            "title": "Redes Sociales"
+        },
+        "copy": {
+            "title": "Todos los derechos reservados."
+        },
+        "information": {
+            "title": "Mi ubicación",
+            "subtitle": "Solicita más información."
+        }
+    }
+}

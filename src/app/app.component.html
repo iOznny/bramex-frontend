@@ -3,18 +3,19 @@
     <img src="assets/img/home.jpg" alt="" sizes="100vw" data-uk-cover data-uk-img>
     <div class="uk-flex uk-flex-center uk-flex-middle uk-height-viewport uk-position-z-index uk-position-relative" data-uk-height-viewport="min-height: 400" style="background-color: rgba(0, 0, 0, 0.5);">
         <div class="uk-container uk-container-small uk-flex-auto uk-text-center" data-uk-scrollspy="target: > .animate; cls: uk-animation-slide-bottom-small uk-invisible; delay: 300">
-            <h1 class="uk-heading-primary animate uk-invisible" style="font-weight: 700;">BRAMEX FOODS INTERNATIONAL</h1>
+            <h1 class="uk-heading-primary animate uk-invisible" style="font-weight: 700;">{{ 'HEADER.title' | translate }}</h1>
             <div class="uk-width-4-5@m uk-margin-auto animate uk-invisible">
                 <p class="lead"></p>
             </div>
             <div class="uk-margin-medium-top animate uk-invisible" data-uk-margin data-uk-scrollspy-class="uk-animation-fade uk-invisible">
-                <a class="uk-button uk-button-default uk-button-large uk-width-2-3 uk-width-auto@s" data-uk-icon="arrow-down" title="¿Quienes Somos?" href="#bramex-section-us" uk-scroll="offset: 70">¿QUIENES SOMOS?</a>
-                <a class="uk-button uk-button-primary uk-button-large uk-width-2-3 uk-width-auto@s" data-uk-icon="cart" title="PRODUCTOS" href="#bramex-section-products" uk-scroll="offset: 70">PRODUCTOS</a>
+                <a class="uk-button uk-button-default uk-button-large uk-width-2-3 uk-width-auto@s" data-uk-icon="arrow-down" title="¿Quienes Somos?" href="#bramex-section-us" uk-scroll="offset: 70">{{ 'HEADER.buttons.btn1' | translate }}</a>
+                <a class="uk-button uk-button-primary uk-button-large uk-width-2-3 uk-width-auto@s" data-uk-icon="cart" title="PRODUCTOS" href="#bramex-section-products" uk-scroll="offset: 70">{{ 'HEADER.buttons.btn2' | translate }}</a>
             </div>
         </div>
     </div>
 </div>
 <!-- End Header Background Picture -->
+
 
 <!-- Create navbar -->
 <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; bottom: #transparent-sticky-navbar">
@@ -24,17 +25,18 @@
         </div>
         <div class="uk-navbar-right">
             <ul class="uk-navbar-nav">
-                <li class="uk-active uk-visible@s"><a href="#bramex-section-us" uk-scroll="offset: 70">Nuestra empresa</a></li>
-                <li><a class="uk-visible@s" href="#bramex-section-products" uk-scroll="offset: 70">Productos</a></li>
-                <li><a class="uk-visible@s" href="#bramex-section-quality" uk-scroll="offset: 70">Quality</a></li>
-                <li><a class="uk-visible@s" href="#bramex-section-catering" uk-scroll="offset: 70">Abastecimiento</a></li>
-                <li><a class="uk-visible@s" href="#bramex-section-contact" uk-scroll="offset: 70">Contacto </a></li>
+                <li class="uk-active uk-visible@s"><a href="#bramex-section-us" uk-scroll="offset: 70">{{ 'NAVBAR.buttons.btn1' | translate }}</a></li>
+                <li><a class="uk-visible@s" href="#bramex-section-products" uk-scroll="offset: 70">{{ 'NAVBAR.buttons.btn2' | translate }}</a></li>
+                <li><a class="uk-visible@s" href="#bramex-section-quality" uk-scroll="offset: 70">{{ 'NAVBAR.buttons.btn3' | translate }}</a></li>
+                <li><a class="uk-visible@s" href="#bramex-section-catering" uk-scroll="offset: 70">{{ 'NAVBAR.buttons.btn4' | translate }}</a></li>
+                <li><a class="uk-visible@s" href="#bramex-section-contact" uk-scroll="offset: 70">{{ 'NAVBAR.buttons.btn5' | translate }} </a></li>
                 <li>
-                    <a href="#"><span class="flag-icon flag-icon-mx uk-border-pill"></span></a>
+                    <a href="#"><span [ngClass]="{'flag-icon-mx': lang === 'es', 'flag-icon-us': lang === 'en'}" class="flag-icon uk-border-pill"></span></a>
                     <div class="uk-navbar-dropdown">
                         <ul class="uk-nav uk-navbar-dropdown-nav">
-                            <li class="uk-active"><a href="assets/es/"><span class="flag-icon flag-icon-mx"></span> Español</a></li>
-                            <li><a href="assets/en/"><span class="flag-icon flag-icon-us"></span> English</a></li>
+                            <li [ngClass]="{'uk-active': lang === 'es'}" (click)="changeLang('es')" ><a><span class="flag-icon flag-icon-mx"></span> Español</a></li>
+                            <li [ngClass]="{'uk-active': lang === 'en'}" (click)="changeLang('en')"><a><span class="flag-icon flag-icon-us"></span> English</a></li>
+                            <!-- <li [ngClass]="{'uk-active': lang === 'jp'}" (click)="changeLang('jp')"><a><span class="flag-icon flag-icon-jp"></span> Japon</a></li> -->
                         </ul>
                     </div>
                 </li>
@@ -45,17 +47,18 @@
 </div>
 <!-- End navbar -->
 
+
 <!-- Creamos la seccion de Empresa -->
 <div class="uk-section uk-section-default uk-padding-remove-top" id="bramex-section-us">
     <div class="uk-container">
-        <h1 class="uk-heading-line uk-text-center uk-text-uppercase"><span>Nuestra Empresa</span></h1>
+        <h1 class="uk-heading-line uk-text-center uk-text-uppercase"><span>{{ 'COMPANY.title' | translate }}</span></h1>
 
         <div class="uk-section uk-section-small uk-padding-remove-top">
             <ul class="uk-subnav uk-subnav-pill uk-flex uk-flex-center" data-uk-switcher="connect: .uk-switcher; animation: uk-animation-fade">
-                <li><a class="" href="#">¿Quienes somos?</a></li>
-                <li><a class="" href="#">Misión y Visión</a></li>
-                <li><a class="" href="#">Historia</a></li>
-                <li><a class="" href="#">Servicios</a></li>
+                <li><a class="" href="#">{{ 'COMPANY.sections.about.title' | translate }}</a></li>
+                <li><a class="" href="#">{{ 'COMPANY.sections.mission.title' | translate }}</a></li>
+                <li><a class="" href="#">{{ 'COMPANY.sections.history.title' | translate }}</a></li>
+                <li><a class="" href="#">{{ 'COMPANY.sections.services.title' | translate }}</a></li>
             </ul>
         </div>
 
@@ -68,19 +71,19 @@
                     </div>
                     
                     <div data-uk-scrollspy-class="uk-animation-slide-right-medium">
-                        <h6 class="uk-text-primary">¿Quienes somos? </h6>
+                        <h6 class="uk-text-primary">{{ 'COMPANY.sections.about.subtitle' | translate }}</h6>
                         <h2 class="uk-margin-small-top"></h2>
                         <p class="subtitle-text">
-                            Bramex Foods International es más que una agencia comercial. Somos su socio internacional a la hora de necesitar una fuente de suministro confiable que le brinde una amplia variedad de materias primas. Trabajamos siempre con un trato cercano y cordial con nuestros clientes, velando por un interés común a través de una red unificada.
+                            {{ 'COMPANY.sections.about.contents.c1' | translate }}                           
                         </p>
                         <p class="subtitle-text">
-                            Por medio de responsables fuentes de suministro abastecemos a la orden de su demanda por ingredientes alimenticios como jugos concentrados, no concentrados, purés, aceites esenciales y demás derivados de frutas cítricas y tropicales, entre otros productos. Para más información sobre nuestra oferta sugerimos revisar nuestro catálogo comercial.
+                            {{ 'COMPANY.sections.about.contents.c2' | translate }}
                         </p>
                         <p class="subtitle-text">
-                            Nuestra actividad se deriva de años de trabajo en conjunto con nuestros colaboradores. Relaciones labradas a base de compromiso, trabajo y responsabilidad.
+                            {{ 'COMPANY.sections.about.contents.c3' | translate }}
                         </p>    
                         <p class="subtitle-text">
-                            A lo largo de toda la cadena suministro contamos con fuentes de producción, procesadores y servicios alternos (logísticos) al alcance de nuestros clientes/distribuidores
+                            {{ 'COMPANY.sections.about.contents.c4' | translate }}
                         </p>    
                     </div>
                 </div>
@@ -90,22 +93,22 @@
             <li>
                 <div class="uk-grid uk-child-width-1-2@l uk-flex-middle" data-uk-grid data-uk-scrollspy="target: > div; cls: uk-animation-slide-left-medium">
                     <div data-uk-scrollspy-class="uk-animation-slide-right-medium">
-                        <h6 class="uk-text-primary">Misión</h6>
+                        <h6 class="uk-text-primary">{{ 'COMPANY.sections.mission.subtitles.mission' | translate }}</h6>
                         <p class="subtitle-text">
-                            Ser el brazo derecho de nuestros clientes convirtiéndonos en una extensión de ellos que les permita poder desarrollar a través de nosotros un sin fin de negociaciones exitosas veraces y seguras, buscando siempre su completa satisfacción.
+                            {{ 'COMPANY.sections.mission.contents.mission' | translate }}
                         </p>
 
-                        <h6 class="uk-text-primary">Visión</h6>
+                        <h6 class="uk-text-primary">{{ 'COMPANY.sections.mission.subtitles.vision' | translate }}</h6>
                         <p class="subtitle-text">
-                            Convertirnos en una fuente inagotable y eficiente en la creación y desarrollo de negocios para todos nuestros aliados comerciales a nivel internacional.
+                            {{ 'COMPANY.sections.mission.contents.vision' | translate }}
                         </p>
 
-                        <h6 class="uk-text-primary">Valores</h6>
+                        <h6 class="uk-text-primary">{{ 'COMPANY.sections.mission.subtitles.values' | translate }}</h6>
                         <ul class="uk-list uk-list-hyphen">
-                            <li><strong>Responsabilidad.</strong>  Cumplimos con acciones y resultados. No con palabras e intenciones. </li>
-                            <li><strong>Empatía y Ética de trabajo.</strong> Nos ayuda a ponernos en la situación de nuestros semejante</li>
-                            <li><strong>Dedicación.</strong> Pasión por nuestro trabajo, orgullo por lo que hacemos y emprendemos.</li>
-                            <li><strong>Colaboración y Compañerismo.</strong> Creemos en relaciones de largo plazo y éxito mutuo como pilares fundamentales de nuestra razón de ser.</li>
+                            <li><strong>{{ 'COMPANY.sections.mission.contents.values.titles.t1' | translate }}</strong>{{ 'COMPANY.sections.mission.contents.values.contents.c1' | translate }}</li>
+                            <li><strong>{{ 'COMPANY.sections.mission.contents.values.titles.t2' | translate }}</strong>{{ 'COMPANY.sections.mission.contents.values.contents.c2' | translate }}</li>
+                            <li><strong>{{ 'COMPANY.sections.mission.contents.values.titles.t3' | translate }}</strong>{{ 'COMPANY.sections.mission.contents.values.contents.c3' | translate }}</li>
+                            <li><strong>{{ 'COMPANY.sections.mission.contents.values.titles.t4' | translate }}</strong>{{ 'COMPANY.sections.mission.contents.values.contents.c4' | translate }}</li>
                         </ul>
                     </div>
                     
@@ -122,7 +125,7 @@
                         <img src="assets/img/Aceites.JPG" alt="" data-uk-img>
                     </div>
                     <div data-uk-scrollspy-class="uk-animation-slide-right-medium">
-                        <h6 class="uk-text-primary">EMPRESA</h6>
+                        <h6 class="uk-text-primary">{{ 'COMPANY.sections.history.subtitle' | translate }}</h6>
                         <h2 class="uk-margin-small-top">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem distinctio, iste a quo fugit dolores. Corrupti doloremque dolorum possimus expedita amet? Optio animi cum cumque. Id ex doloremque voluptatem deleniti!</h2>
                         <p class="subtitle-text">
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -147,26 +150,26 @@
             <li>
                 <div class="uk-grid uk-child-width-1-2@l uk-flex-middle" data-uk-grid data-uk-scrollspy="target: > div; cls: uk-animation-slide-left-medium">
                     <div data-uk-scrollspy-class="uk-animation-slide-right-medium">
-                        <h6 class="uk-text-primary">Servicios</h6>
+                        <h6 class="uk-text-primary">{{ 'COMPANY.sections.services.subtitle' | translate }}</h6>
                         <p class="subtitle-text">
-                            Nos encargaremos de reducir significativamente el esfuerzo y el tiempo de búsqueda de una fuente confiable para nuestros clientes.  Permita que nuestra experiencia en el mercado le brinde la tranquilidad que necesita al saber que cuenta con el proveedor que tanto necesitaba.
+                            {{ 'COMPANY.sections.services.contents.c1' | translate }}
                         </p>
                         <p class="subtitle-text">
-                            Contamos con una extensa red de socios localizados a lo largo de distintas regiones del mundo, brindando a nuestros clientes una atención especializada que se necesita para generar fructíferos y seguros negocios.
+                            {{ 'COMPANY.sections.services.contents.c2' | translate }}
                         </p>
                         <p class="subtitle-text">
-                            Nuestros servicios:
+                            {{ 'COMPANY.sections.services.contents.c3' | translate }}
                         </p>
                         
                         <ul class="uk-list uk-list-decimal">
-                            <li>Coordinamos la obtención, seguimiento y adquisición de los ingredientes requeridos por nuestros clientes.</li>
-                            <li>Conocemos las condiciones y valoraciones del mercado. Contamos con los últimos reportes de la industria e informes de cosecha.</li>
-                            <li>Organizamos y brindamos seguimiento a tu pedido de principio a fin y de ser necesario podemos coordinar la programación logística necesaria.</li>
-                            <li>Long-term contracts as well as spot-sales.</li>
+                            <li>{{ 'COMPANY.sections.services.contents.c4' | translate }}</li>
+                            <li>{{ 'COMPANY.sections.services.contents.c5' | translate }}</li>
+                            <li>{{ 'COMPANY.sections.services.contents.c6' | translate }}</li>
+                            <li>{{ 'COMPANY.sections.services.contents.c7' | translate }}</li>
                         </ul>
                        
                         <p>
-                            A pesar que los cítricos y las frutas tropicales son nuestra especialidad , ofrecemos una amplia variedad de ingredientes a base de frutas, tanto convencionales como orgánicos. Y si usted no encuentra algún producto que esté buscando dentro de nuestra oferta, no se preocupe, también le ayudamos a dar con ello.
+                            {{ 'COMPANY.sections.services.contents.c8' | translate }}
                         </p>
                     </div>
                     <div>
@@ -179,17 +182,18 @@
 </div>
 <!-- Termina la seccion de Empresa -->
 
+
 <!-- Creamos la seccion de Productos -->
 <div class="uk-section uk-section-primary uk-preserve-color uk-light uk-padding-remove-top" id="bramex-section-products" uk-scrollspy="cls: uk-animation-scale-down; target: > div; delay: 400; repeat: false">
     <div class="uk-container uk-container-expand uk-margin-large-bottom" uk-filter="target: .js-filter">
-        <h1 class="uk-heading-line uk-text-center uk-text-uppercase uk-padding-small"><span>Productos</span></h1>
+        <h1 class="uk-heading-line uk-text-center uk-text-uppercase uk-padding-small"><span>{{ 'PRODUCTS.title' | translate }}</span></h1>
         
         <ul class="uk-subnav uk-subnav-pill">
-            <li class="uk-active" data-uk-filter-control><a href="#">Mostrar Todo</a></li>
-            <li data-uk-filter-control=".filter-card-spring"><a href="#">Primavera</a></li>
-            <li data-uk-filter-control=".filter-card-summer"><a href="#">Verano</a></li>
-            <li data-uk-filter-control=".filter-card-fall"><a href="#">Otoño</a></li>
-            <li data-uk-filter-control=".filter-card-winter"><a href="#">Invierno</a></li>
+            <li class="uk-active" data-uk-filter-control><a href="#">{{ 'PRODUCTS.categories.all' | translate }}</a></li>
+            <li data-uk-filter-control=".filter-card-spring"><a href="#">{{ 'PRODUCTS.categories.spring' | translate }}</a></li>
+            <li data-uk-filter-control=".filter-card-summer"><a href="#">{{ 'PRODUCTS.categories.summer' | translate }}</a></li>
+            <li data-uk-filter-control=".filter-card-fall"><a href="#">{{ 'PRODUCTS.categories.autumn' | translate }}</a></li>
+            <li data-uk-filter-control=".filter-card-winter"><a href="#">{{ 'PRODUCTS.categories.winter' | translate }}</a></li>
         </ul>
 
         <div class="uk-grid uk-grid-medium uk-child-width-1-2@s uk-child-width-1-3@m uk-child-width-1-4@l  uk-child-width-1-5@xl uk-grid-match js-filter" data-uk-grid="masonry: true" data-uk-sortable="handle: .drag-icon">
@@ -293,28 +297,76 @@
         <h3 class="uk-heading-line uk-text-center uk-text-uppercase uk-padding-small">
             <a class="uk-link-heading uk-text-secondary" href="assets/files/CATALOGUE2020.pdf" download="CATALOGUE2020.pdf">
                 <span uk-icon="cloud-download"></span> 
-                Descargar nuestro catalogo de productos
+                {{ 'PRODUCTS.catalogue' | translate }}
             </a>
         </h3>
     </div>
 </div>
 <!-- Termina la seccion de Productos -->
 
+
 <!-- Comienza la seccion de Quality -->
 <div class="uk-section uk-section-muted" id="bramex-section-quality">
     <div class="uk-container">
-        <h1 class="uk-heading-line uk-text-center uk-text-uppercase uk-padding-small"><span>Quality</span></h1>
+        <h1 class="uk-heading-line uk-text-center uk-text-uppercase uk-padding-small"><span>{{ 'QUALITY.title' | translate }}</span></h1>
     </div>
 </div>
 <!-- Termina la seccion de Quality -->
 
+
 <!-- Comienza la seccion de Abastecimiento -->
 <div class="uk-section uk-section-primary" id="bramex-section-catering">
     <div class="uk-container">
-        <h1 class="uk-heading-line uk-text-center uk-text-uppercase uk-padding-small"><span>Abastecimiento</span></h1>
+        <h1 class="uk-heading-line uk-text-center uk-text-uppercase uk-padding-small"><span>{{ 'CATERING.title' | translate }}</span></h1>
         <div class="" uk-grid>
             <div class="map-catering" style="width: 100%; height: 400px; overflow: hidden;"></div>
         </div>
     </div>
 </div>
 <!-- Termina la seccion de Abastecimiento -->
+
+
+<!-- Footer -->
+<footer class="uk-section-secondary uk-preserve-color uk-light" id="bramex-section-contact">
+    <div class="uk-container uk-section">
+      <div class="uk-grid uk-child-width-1-3@l" uk-scrollspy="cls: uk-animation-scale-up; target: > div; delay: 400; repeat: false" data-uk-grid>
+        <div>
+
+            <div class="">
+                <b>{{ 'FOOTER.information.title' | translate }}</b><br><a href='https://goo.gl/maps/Z2298G8mGfM7KVkw6' target='_blank'>{{ 'FOOTER.information.subtitle' | translate }}</a>
+            </div>
+
+            
+            <div class="uk-height-large" id="mapid"></div>
+        </div>
+
+        <div>
+            <h4>{{ 'FOOTER.contact.title' | translate }}</h4>
+            <p><span uk-icon="mail"></span> info@bramexinternational.com</p>
+            <p><span uk-icon="mail"></span> sales@bramexinternational.com</p>
+            <p><span uk-icon="receiver"></span> +52 222 708 3602</p>
+            <p><span uk-icon="receiver"></span> +52 222 423 4306</p>
+            <h4>{{ 'FOOTER.contact.location' | translate }}</h4>
+            <p><span uk-icon="location"></span> Lomas de Angelópolis, II Chincheta, Paseo Sinfonía, 72830 Tlaxcalancingo, Puebla.</p>
+        </div>
+
+        <div>
+          <h4>{{ 'FOOTER.social.title' | translate }}</h4>
+          <a href="" class="uk-icon-button  uk-margin-small-right" data-uk-icon="facebook"></a>
+          <a href="" class="uk-icon-button  uk-margin-small-right" data-uk-icon="twitter"></a>
+          <a href="" class="uk-icon-button" data-uk-icon="instagram"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="uk-section uk-section-xsmall" style="background-color: rgba(0,0,0,0.15)">
+      <div class="uk-container">
+        <div class="uk-grid uk-text-center uk-text-left@s" data-uk-grid>
+          <div class="uk-text-small uk-text-muted">
+            Copyright 2021 - {{ 'FOOTER.copy.title' | translate }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Footer -->
