@@ -1,6 +1,4 @@
-$(function () {
-
-    let ruta = '/bramex';
+window.addEventListener('load', () => {
 
     var coordenadas = [18.993006, -98.277910]; 
 
@@ -107,4 +105,5 @@ $(function () {
             "color":colorSet.next()
         }];
     });
-})
+    
+});
