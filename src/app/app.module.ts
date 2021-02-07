@@ -1,8 +1,12 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+/* Forms */
+import { FormsModule } from "@angular/forms";
+
+/* Translate Idioms */
+import { HttpClientModule, HttpClient, HttpHeaders } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
@@ -11,6 +15,9 @@ import { APP_ROUTING } from "./app.routes";
 
 /* Componentes Principales */
 import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/login/login.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { NavbarAdminComponent } from './shared/navbar-admin/navbar-admin.component';
 
 /* Lenguaje */
 export function createTranslateLoader(http: HttpClient) {
@@ -20,10 +27,14 @@ export function createTranslateLoader(http: HttpClient) {
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    LoginComponent,
+    DashboardComponent,
+    NavbarAdminComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     APP_ROUTING,
     HttpClientModule,
     TranslateModule.forRoot({

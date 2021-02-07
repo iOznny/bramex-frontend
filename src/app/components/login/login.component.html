@@ -1,0 +1,40 @@
+<div class="uk-section uk-section-muted uk-flex uk-flex-middle uk-animation-fade" uk-height-viewport>
+	<div class="uk-width-1-1">
+		<div class="uk-container">
+			<div class="uk-grid-margin uk-grid uk-grid-stack" uk-grid>
+				<div class="uk-width-1-1@m">
+					<div class="uk-margin uk-width-large uk-margin-auto uk-card uk-card-default uk-card-body uk-box-shadow-large">
+                        <a class="uk-navbar-item uk-logo" [routerLink]="['/']"><img src="assets/img/logo70px.png" alt="Bramex"></a>
+						<h4 class="uk-card-title uk-text-center">Bramex Foods</h4>
+
+						<form #loginForm="ngForm" (ngSubmit)="onSubmit()">
+							<div class="uk-margin">
+								<div class="uk-inline uk-width-1-1">
+									<span class="uk-form-icon" uk-icon="icon: mail"></span>
+									<input class="uk-input uk-form-large" name="email" #email="ngModel" [(ngModel)]="userLogin.email" type="text" placeholder="Correo Electrónico" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" >
+									<small class="uk-inline uk-text-danger" *ngIf="!email.valid && email.touched"> 
+										El correo electrónico es invalido, verifique.
+									</small>
+								</div>
+							</div>
+
+							<div class="uk-margin">
+								<div class="uk-inline uk-width-1-1">
+									<span class="uk-form-icon" uk-icon="icon: lock"></span>
+									<input class="uk-input uk-form-large" name="password" #password="ngModel" [(ngModel)]="userLogin.password" type="password" placeholder="Contraseña" required min="8" max="32" pattern="[a-zA-Z0-9@%.]{8,32}">	
+									<small class="uk-inline uk-text-danger" *ngIf="!password.valid && password.touched"> 
+										La contraseña es invalida, verifique.
+									</small>
+								</div>
+							</div>
+
+							<div class="uk-margin">
+								<button class="uk-button uk-button-primary uk-button-large uk-width-1-1" type="submit" [disabled]="loginForm.invalid">Iniciar Sesión</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
