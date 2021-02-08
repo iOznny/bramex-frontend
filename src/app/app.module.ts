@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
+import { RouterModule } from '@angular/router';
 
 /* Forms */
 import { FormsModule } from "@angular/forms";
@@ -15,9 +16,16 @@ import { APP_ROUTING } from "./app.routes";
 
 /* Componentes Principales */
 import { HomeComponent } from './components/home/home.component';
-import { LoginComponent } from './components/login/login.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NavbarAdminComponent } from './shared/navbar-admin/navbar-admin.component';
+
+import { LoginComponent } from './components/login/login.component';
+
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+
+import { UsersComponent } from './components/dashboard/users/users.component';
+import { UserNewComponent } from './components/dashboard/users/user-new.component';
+import { UserEditComponent } from './components/dashboard/users/user-edit.component';
+import { UserIndexComponent } from './components/dashboard/users/user-index.component';
 
 /* Lenguaje */
 export function createTranslateLoader(http: HttpClient) {
@@ -30,10 +38,15 @@ export function createTranslateLoader(http: HttpClient) {
     HomeComponent,
     LoginComponent,
     DashboardComponent,
-    NavbarAdminComponent
+    NavbarAdminComponent,
+    UsersComponent,
+    UserNewComponent,
+    UserEditComponent,
+    UserIndexComponent
   ],
   imports: [
     BrowserModule,
+    RouterModule,
     FormsModule,
     APP_ROUTING,
     HttpClientModule,

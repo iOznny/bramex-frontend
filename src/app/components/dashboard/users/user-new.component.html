@@ -1,0 +1,96 @@
+<!-- Index User Create -->
+<div class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom">
+    <ul class="uk-breadcrumb uk-alert-success">
+        <li><span></span></li>
+        <li routerLinkActive="active">
+            <a [routerLink]="['/dashboard']">Dashboard</a>
+        </li>  
+
+        <li routerLinkActive="active">
+            <a [routerLink]="['/users/index']">Usuarios</a>
+        </li>
+
+        <li routerLinkActive="active">
+            <a>Crear Usuario</a>
+        </li>
+    </ul>
+
+    <div class="uk-card uk-card-default uk-card-body uk-width-auto">
+        <!-- Create User -->
+        <div class="uk-overflow-auto">
+            <div class="uk-card-body">
+                <h3 class="uk-card-title uk-text-bold uk-text-uppercase uk-text-primary">Crear Usuario</h3>
+
+                <form>
+                    <div class="uk-margin">
+                      <label class="uk-form-label" for="form-stacked-text">Nombre(s)</label>
+                      <div class="uk-form-controls">
+                        <input class="uk-input" id="form-stacked-text" type="text" placeholder="Nombre(s) completo">
+                      </div>
+                    </div>
+
+                    <div class="uk-margin">
+                      <label class="uk-form-label" for="form-stacked-text">Apellido Paterno</label>
+                      <div class="uk-form-controls">
+                        <input class="uk-input" id="form-stacked-text" type="text" placeholder="Apellido Paterno">
+                      </div>
+                    </div>
+
+                    <div class="uk-margin">
+                      <label class="uk-form-label" for="form-stacked-text">Nombre de Usuario</label>
+                      <div class="uk-form-controls">
+                        <input class="uk-input" id="form-stacked-text" type="text" placeholder="Usuario">
+                      </div>
+                      <small class="uk-flex uk-flex-middle uk-margin-small-top">Este nombre de usuario sera el que mostrara como perfil publico.</small>
+                    </div>
+
+                    <div class="uk-margin">
+                      <label class="uk-form-label" for="form-stacked-text">Correo Electrónico</label>
+                      <div class="uk-form-controls">
+                        <input class="uk-input" id="form-stacked-text" type="password" placeholder="a@b.c">
+                      </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-stacked-text">Contraseña</label>
+                        <div class="uk-form-controls">
+                          <input class="uk-input" id="form-stacked-text" type="password" placeholder="********">
+                        </div>
+                        <small class="uk-flex uk-flex-middle uk-margin-small-top">Mínimo 8 caracteres, al menos una letra y un número.</small>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-stacked-text">Confirmar Contraseña</label>
+                        <div class="uk-form-controls">
+                          <input class="uk-input" id="form-stacked-text" type="password" placeholder="********">
+                        </div>
+                        <small class="uk-flex uk-flex-middle uk-margin-small-top">Mínimo 8 caracteres, al menos una letra y un número.</small>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-stacked-text">Rol</label>
+                        <select class="uk-select">
+                            <option>Option 01</option>
+                            <option>Option 02</option>
+                        </select>
+                    </div>
+
+                    <!-- <div class="uk-margin">
+                      <div class="uk-form-controls">
+                        <label><input class="uk-checkbox uk-margin-small-right" type="checkbox"><small>Accept our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</small></label>
+                      </div>
+                    </div> -->
+
+                    <div class="uk-margin">
+                      <div class="uk-form-controls">
+                        <button class="uk-button uk-button-primary">Crear Cuenta</button>
+                      </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
