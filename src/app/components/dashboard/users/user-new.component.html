@@ -21,70 +21,65 @@
             <div class="uk-card-body">
                 <h3 class="uk-card-title uk-text-bold uk-text-uppercase uk-text-primary">Crear Usuario</h3>
 
-                <form>
+                <form #createForm="ngForm" (ngSubmit)="onSubmit()">
                     <div class="uk-margin">
-                      <label class="uk-form-label" for="form-stacked-text">Nombre(s)</label>
-                      <div class="uk-form-controls">
-                        <input class="uk-input" id="form-stacked-text" type="text" placeholder="Nombre(s) completo">
-                      </div>
+                      <label class="uk-form-label">Nombre(s)</label>
+                      <input class="uk-input" type="text" name="name" #name="ngModel" [(ngModel)]="userRegister.name" placeholder="Nombre(s) completo" pattern="[a-zA-Z0-9]{1,70}" required>
+                      <small class="uk-inline uk-text-danger" *ngIf="!name.valid && name.touched"> 
+                        El nombre es invalido, verifique.
+                      </small>
                     </div>
 
                     <div class="uk-margin">
-                      <label class="uk-form-label" for="form-stacked-text">Apellido Paterno</label>
-                      <div class="uk-form-controls">
-                        <input class="uk-input" id="form-stacked-text" type="text" placeholder="Apellido Paterno">
-                      </div>
+                      <label class="uk-form-label">Apellido Paterno</label>
+                      <input class="uk-input" type="text" name="surname" #surname="ngModel" [(ngModel)]="userRegister.surname" placeholder="Apellido Paterno" pattern="[a-zA-Z0-9]{1,70}" required>
+                      <small class="uk-inline uk-text-danger" *ngIf="!surname.valid && surname.touched"> 
+                        El apellido paterno es invalido, verifique.
+                      </small>
                     </div>
 
                     <div class="uk-margin">
-                      <label class="uk-form-label" for="form-stacked-text">Nombre de Usuario</label>
-                      <div class="uk-form-controls">
-                        <input class="uk-input" id="form-stacked-text" type="text" placeholder="Usuario">
-                      </div>
+                      <label class="uk-form-label">Nombre de Usuario</label>
+                      <input class="uk-input" type="text" name="nick" #nick="ngModel" [(ngModel)]="userRegister.nick" placeholder="Usuario" pattern="[a-zA-Z0-9]{1,32}" required>
                       <small class="uk-flex uk-flex-middle uk-margin-small-top">Este nombre de usuario sera el que mostrara como perfil publico.</small>
+                      <small class="uk-inline uk-text-danger" *ngIf="!nick.valid && nick.touched"> 
+                        El nombre de usuario es invalido, verifique.
+                      </small>
                     </div>
 
                     <div class="uk-margin">
-                      <label class="uk-form-label" for="form-stacked-text">Correo Electrónico</label>
-                      <div class="uk-form-controls">
-                        <input class="uk-input" id="form-stacked-text" type="password" placeholder="a@b.c">
-                      </div>
+                      <label class="uk-form-label">Correo Electrónico</label>
+                      <input class="uk-input" type="email" name="email" #email="ngModel" [(ngModel)]="userRegister.email" placeholder="a@b.c" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+                      <small class="uk-inline uk-text-danger" *ngIf="!email.valid && email.touched"> 
+                        El correo electrónico es invalido, verifique.
+                      </small>
                     </div>
 
                     <div class="uk-margin">
-                        <label class="uk-form-label" for="form-stacked-text">Contraseña</label>
-                        <div class="uk-form-controls">
-                          <input class="uk-input" id="form-stacked-text" type="password" placeholder="********">
-                        </div>
-                        <small class="uk-flex uk-flex-middle uk-margin-small-top">Mínimo 8 caracteres, al menos una letra y un número.</small>
+                      <label class="uk-form-label">Contraseña</label>
+                      <input class="uk-input" type="password" name="password" #password="ngModel" [(ngModel)]="userRegister.password" placeholder="********" pattern="[a-zA-Z0-9@%.]{8,32}" required>
+                      <small class="uk-flex uk-flex-middle uk-margin-small-top">Mínimo 8 caracteres, al menos una letra y un número.</small>
+                      <small class="uk-inline uk-text-danger" *ngIf="!password.valid && password.touched"> 
+                        La contraseña es invalida, verifique.
+                      </small>
                     </div>
 
                     <div class="uk-margin">
-                        <label class="uk-form-label" for="form-stacked-text">Confirmar Contraseña</label>
-                        <div class="uk-form-controls">
-                          <input class="uk-input" id="form-stacked-text" type="password" placeholder="********">
-                        </div>
-                        <small class="uk-flex uk-flex-middle uk-margin-small-top">Mínimo 8 caracteres, al menos una letra y un número.</small>
+                      <label class="uk-form-label">Rol</label>
+                      <select *ngFor="let rol of roles" class="uk-select" name="rol" #role_id="ngModel" [(ngModel)]="userRegister.role_id" required>
+                        <option value="" disabled hidden selected>Seleccione un rol de usuario</option>
+                        <option value="{{ rol.id }}">{{ rol.name }}</option>
+                      </select>
                     </div>
 
                     <div class="uk-margin">
-                        <label class="uk-form-label" for="form-stacked-text">Rol</label>
-                        <select class="uk-select">
-                            <option>Option 01</option>
-                            <option>Option 02</option>
-                        </select>
-                    </div>
+                      <button class="uk-button uk-button-primary" type="submit" [disabled]="createForm.invalid">
+                        <i [ngClass]="{'fa-refresh fa-spin': loading }" class="fa"></i>
+                        <span *ngIf="!loading"> Crear Cuenta</span>
+                        <span *ngIf="loading"> Procesando</span>
+                      </button>
 
-                    <!-- <div class="uk-margin">
-                      <div class="uk-form-controls">
-                        <label><input class="uk-checkbox uk-margin-small-right" type="checkbox"><small>Accept our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</small></label>
-                      </div>
-                    </div> -->
-
-                    <div class="uk-margin">
-                      <div class="uk-form-controls">
-                        <button class="uk-button uk-button-primary">Crear Cuenta</button>
-                      </div>
+                      <button class="uk-button uk-button-default" type="button" routerLinkActive="active" [routerLink]="['/users/index']">Cancelar</button>
                     </div>
                 </form>
             </div>

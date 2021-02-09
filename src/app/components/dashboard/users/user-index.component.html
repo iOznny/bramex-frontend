@@ -19,75 +19,46 @@
         <div class="uk-overflow-auto">
             <!-- Button Add  -->
             <button type="button" class="uk-button uk-button-primary uk-position-top-right" routerLinkActive="active" [routerLink]="['/users/create']"><span uk-icon="plus-circle"></span></button>
-          
-            <table id="miTabla" class="uk-table uk-table-hover uk-table-middle" style="width:100%">
-                <thead>
-                    <tr>
-                        <th class="uk-table-shrink">Acciones</th>
-                        <th class="uk-table-shrink">Usuario</th>
-                        <th class="uk-table-shrink">Nombre</th>
-                        <th class="uk-table-shrink">Apellido Paterno</th>
-                        <th class="uk-table-shrink">Corro Electrónico</th>
-                    </tr>
-                </thead>
-                
-                <tbody>
-                    <tr>
-                        <td>
-                            <button class="uk-button uk-button-secondary"><span uk-icon="pencil"></span></button>
-                            <button class="uk-button uk-button-danger"><span uk-icon="trash"></span></button>
-                        </td>
-                        <td class="uk-text-truncate">Lseffser.</td>
-                        <td class="uk-text-nowrap">Lorem ipsum dolor</td>
-                        <td class="uk-text-nowrap">Lorem ipsum dolor</td>
-                        <td class="uk-text-nowrap">Lorem ipsum dolor</td>
-                    </tr>
+    
+            <div class="uk-overflow-auto">
+                <table class="uk-table uk-table-hover uk-table-middle uk-table-divider">
+                    <thead>
+                        <tr>
+                            <th class="uk-table-shrink">Usuario</th>
+                            <th class="uk-table-shrink">Nombre</th>
+                            <th class="uk-table-shrink">Apellido Paterno</th>
+                            <th class="uk-table-shrink">Corro Electrónico</th>
+                            <th class="uk-table-shrink">Acciones</th>
+                        </tr>
+                    </thead>
 
-                    <tr>
-                        <td>
-                            <button class="uk-button uk-button-secondary"><span uk-icon="pencil"></span></button>
-                            <button class="uk-button uk-button-danger"><span uk-icon="trash"></span></button>
-                        </td>
-                        <td class="uk-text-truncate">Lseffser.</td>
-                        <td class="uk-text-nowrap">Lorem ipsum dolor</td>
-                        <td class="uk-text-nowrap">Lorem ipsum dolor</td>
-                        <td class="uk-text-nowrap">Lorem ipsum dolor</td>
-                    </tr>
+                    <tbody>
+                        <tr *ngFor="let user of users">
+                            <td class="uk-text-truncate">{{ user.nick }}</td>
+                            <td class="uk-text-nowrap">{{ user.name }}</td>
+                            <td class="uk-text-nowrap">{{ user.surname }}</td>
+                            <td class="uk-text-nowrap">{{ user.email }}</td>
+                            <td>
+                                <button class="uk-button uk-button-default" value="{{ user.id }}" (click)="editUser(user.id)"><span uk-icon="pencil"></span></button>
+                                <button class="uk-button uk-button-danger" value="{{ user.id }}" (click)="removeUser(user.id)" uk-toggle="target: #modal-example"><span uk-icon="trash"></span></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-                    <tr>
-                        <td>
-                            <button class="uk-button uk-button-secondary"><span uk-icon="pencil"></span></button>
-                            <button class="uk-button uk-button-danger"><span uk-icon="trash"></span></button>
-                        </td>
-                        <td class="uk-text-truncate">Lseffser.</td>
-                        <td class="uk-text-nowrap">Lorem ipsum dolor</td>
-                        <td class="uk-text-nowrap">Lorem ipsum dolor</td>
-                        <td class="uk-text-nowrap">Lorem ipsum dolor</td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <button class="uk-button uk-button-secondary"><span uk-icon="pencil"></span></button>
-                            <button class="uk-button uk-button-danger"><span uk-icon="trash"></span></button>
-                        </td>
-                        <td class="uk-text-truncate">Lseffser.</td>
-                        <td class="uk-text-nowrap">Lorem ipsum dolor</td>
-                        <td class="uk-text-nowrap">Lorem ipsum dolor</td>
-                        <td class="uk-text-nowrap">Lorem ipsum dolor</td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <button class="uk-button uk-button-secondary"><span uk-icon="pencil"></span></button>
-                            <button class="uk-button uk-button-danger"><span uk-icon="trash"></span></button>
-                        </td>
-                        <td class="uk-text-truncate">Lseffser.</td>
-                        <td class="uk-text-nowrap">Lorem ipsum dolor</td>
-                        <td class="uk-text-nowrap">Lorem ipsum dolor</td>
-                        <td class="uk-text-nowrap">Lorem ipsum dolor</td>
-                    </tr>
-                </tbody>
-            </table>
         </div>
+    </div>
+</div>
+
+<!-- This is the modal -->
+<div id="modal-example" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+        <h2 class="uk-modal-title">Eliminar Usuario</h2>
+        <p>¿Esta seguro de eliminar permanentemente a este usuario junto con su documentación?</p>
+        <p class="uk-text-right">
+            <button class="uk-button uk-button-primary" type="button">Eliminar</button>
+            <button class="uk-button uk-button-default uk-modal-close" type="button">Cancelar</button>
+        </p>
     </div>
 </div>

@@ -1,1 +1,83 @@
-<p>user-edit works!</p>
+<!-- Index User Create -->
+<div class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom">
+    <ul class="uk-breadcrumb uk-alert-success">
+        <li><span></span></li>
+        <li routerLinkActive="active">
+            <a [routerLink]="['/dashboard']">Dashboard</a>
+        </li>  
+
+        <li routerLinkActive="active">
+            <a [routerLink]="['/users/index']">Usuarios</a>
+        </li>
+
+        <li routerLinkActive="active">
+            <a>Editar Usuario</a>
+        </li>
+    </ul>
+
+    <div class="uk-card uk-card-default uk-card-body uk-width-auto">
+        <!-- Create User -->
+        <div class="uk-overflow-auto">
+            <div class="uk-card-body">
+                <h3 class="uk-card-title uk-text-bold uk-text-uppercase uk-text-primary">Editar Usuario</h3>
+
+                <form #editForm="ngForm" (ngSubmit)="onSubmit()">
+                    <div class="uk-margin">
+                      <label class="uk-form-label">Nombre(s)</label>
+                      <input class="uk-input" type="text" #name="ngModel" [(ngModel)]="userEdit.name" name="name" placeholder="{{ userData.name }}" pattern="[a-zA-Z0-9]{1,70}" required>
+                      <small class="uk-inline uk-text-danger" *ngIf="!name.valid && name.touched"> 
+                        El nombre es invalido, verifique.
+                      </small>
+                    </div>
+
+                    <div class="uk-margin">
+                      <label class="uk-form-label">Apellido Paterno</label>
+                      <input class="uk-input" type="text" #surname="ngModel" [(ngModel)]="userEdit.surname" name="surname" placeholder="{{ userData.surname }}" pattern="[a-zA-Z0-9]{1,70}" required>
+                      <small class="uk-inline uk-text-danger" *ngIf="!surname.valid && surname.touched"> 
+                        El apellido paterno es invalido, verifique.
+                      </small>
+                    </div>
+
+                    <div class="uk-margin">
+                      <label class="uk-form-label">Nombre de Usuario</label>
+                      <input class="uk-input" type="text" #nick="ngModel" [(ngModel)]="userEdit.nick" name="nick" placeholder="{{ userData.nick }}" pattern="[a-zA-Z0-9]{1,32}" required>
+                      <small class="uk-flex uk-flex-middle uk-margin-small-top">Este nombre de usuario sera el que mostrara como perfil publico.</small>
+                      <small class="uk-inline uk-text-danger" *ngIf="!nick.valid && nick.touched"> 
+                        El nombre de usuario es invalido, verifique.
+                      </small>
+                    </div>
+
+                    <div class="uk-margin">
+                      <label class="uk-form-label">Correo Electrónico</label>
+                      <input class="uk-input" type="email" #email="ngModel" [(ngModel)]="userEdit.email" name="email" placeholder="{{ userData.email }}" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+                      <small class="uk-inline uk-text-danger" *ngIf="!email.valid && email.touched"> 
+                        El correo electrónico es invalido, verifique.
+                      </small>
+                    </div>
+
+                    <div class="uk-margin">
+                      <label class="uk-form-label">Contraseña</label>
+                      <input class="uk-input" type="password" #password="ngModel" [(ngModel)]="userEdit.password" name="password" placeholder="********" pattern="[a-zA-Z0-9@%.]{8,32}" required>
+                      <small class="uk-flex uk-flex-middle uk-margin-small-top">Mínimo 8 caracteres, al menos una letra y un número.</small>
+                      <small class="uk-inline uk-text-danger" *ngIf="!password.valid && password.touched"> 
+                        La contraseña es invalida, verifique.
+                      </small>
+                    </div>
+
+                    <div class="uk-margin">
+                      <button class="uk-button uk-button-primary" type="submit" [disabled]="editForm.invalid">
+                        <i [ngClass]="{'fa-refresh fa-spin': loading }" class="fa"></i>
+                        <span *ngIf="!loading"> Editar Usuario</span>
+                        <span *ngIf="loading"> Procesando</span>
+                      </button>
+
+                      <button class="uk-button uk-button-default" type="button" routerLinkActive="active" [routerLink]="['/users/index']">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

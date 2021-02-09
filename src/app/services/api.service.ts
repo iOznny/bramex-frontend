@@ -44,6 +44,26 @@ export class ApiService {
     return this.http.post(this.url + request, body, { headers });
   }
 
+  requestPUT(request: string, body) {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'X-Requested-With': 'XMLHttpRequest',
+      'Authorization': localStorage.getItem('token')
+    });
+
+    return this.http.put(this.url + request, body, { headers });
+  }
+
+  requestDELETE(request: string, body) {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'X-Requested-With': 'XMLHttpRequest',
+      'Authorization': localStorage.getItem('token')
+    });
+
+    return this.http.put(this.url + request, body, { headers });
+  }
+
   requestUSER(request: string, body) {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -52,5 +72,6 @@ export class ApiService {
 
     return this.http.post(this.url + request, body, { headers });
   }
+
 
 }

@@ -11,7 +11,7 @@
 							<div class="uk-margin">
 								<div class="uk-inline uk-width-1-1">
 									<span class="uk-form-icon" uk-icon="icon: mail"></span>
-									<input class="uk-input uk-form-large" name="email" #email="ngModel" [(ngModel)]="userLogin.email" type="text" placeholder="Correo Electrónico" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" >
+									<input class="uk-input uk-form-large" name="email" #email="ngModel" [(ngModel)]="userLogin.email" type="text" placeholder="Correo Electrónico" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
 									<small class="uk-inline uk-text-danger" *ngIf="!email.valid && email.touched"> 
 										El correo electrónico es invalido, verifique.
 									</small>
@@ -29,7 +29,18 @@
 							</div>
 
 							<div class="uk-margin">
-								<button class="uk-button uk-button-primary uk-button-large uk-width-1-1" type="submit" [disabled]="loginForm.invalid">Iniciar Sesión</button>
+								<button class="uk-button uk-button-primary uk-button-large uk-width-1-1" type="submit" [disabled]="loginForm.invalid">
+									<i [ngClass]="{'fa-refresh fa-spin': loading }" class="fa"></i>
+									<span *ngIf="!loading"> Iniciar Sesión</span>
+									<span *ngIf="loading"> Autenticando</span>
+								</button>
+							</div>
+
+							<div class="uk-margin" *ngIf="alert">
+								<div class="uk-alert-danger" uk-alert>
+									<a class="uk-alert-close" uk-close></a>
+									<p>Al parecer los servicios de autenticación no estan activos, intente más tarde.</p>
+								</div>
 							</div>
 						</form>
 					</div>
