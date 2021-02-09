@@ -12,6 +12,8 @@ import { UserService } from "../../services/user.service";
 export class LoginComponent implements OnInit {
 
   public userLogin: UserLogin;
+  public loading: boolean = false;
+  public alert: boolean = false;
 
   constructor(private user: UserService, private router: Router) { 
     this.userLogin = new UserLogin('', '');
@@ -27,6 +29,8 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
+    this.loading = true;
+
     // Se envia el objeto con la información y obtenemos la respuesta.
     this.user.login(this.userLogin).subscribe( response => {
       if(response['token']) {
@@ -40,10 +44,15 @@ export class LoginComponent implements OnInit {
           // Guardamos la info del user en el storage.
           localStorage.setItem('user', JSON.stringify(response_user['user']));
 
+          this.loading = false;
+
           // Redireccionar al Dashboard.
           this.router.navigate(['/dashboard']);
         });
       }
+    }, error => {
+      this.loading = true;
+      this.alert = true;
     });
   }
   

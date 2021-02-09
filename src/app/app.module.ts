@@ -26,6 +26,7 @@ import { UsersComponent } from './components/dashboard/users/users.component';
 import { UserNewComponent } from './components/dashboard/users/user-new.component';
 import { UserEditComponent } from './components/dashboard/users/user-edit.component';
 import { UserIndexComponent } from './components/dashboard/users/user-index.component';
+import { UserDeleteComponent } from './components/dashboard/users/user-delete.component';
 
 /* Lenguaje */
 export function createTranslateLoader(http: HttpClient) {
@@ -42,12 +43,13 @@ export function createTranslateLoader(http: HttpClient) {
     UsersComponent,
     UserNewComponent,
     UserEditComponent,
-    UserIndexComponent
+    UserIndexComponent,
+    UserDeleteComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule,
     FormsModule,
+    RouterModule,
     APP_ROUTING,
     HttpClientModule,
     TranslateModule.forRoot({
